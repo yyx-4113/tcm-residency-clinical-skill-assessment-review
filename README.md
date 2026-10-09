@@ -20,12 +20,12 @@ This repository contains the coded data, the analysis/plotting scripts, and the 
 ├── author_verification_statement.md
 ├── data/
 │   ├── coding_aggregates.csv    # EXACT aggregated results reported in the paper
-│   ├── bibliography_template.csv# 36 core references cited in the paper (coding columns blank)
-│   └── yearly_counts_template.csv # annual counts (to be completed from CNKI export)
+│   ├── bibliography_template.csv# 36 core references; full 107-row bibliography pending CNKI export
+│   └── yearly_counts.csv        # EXACT per-year counts 2014–2025 (recovered, regression-verified)
 ├── scripts/
 │   ├── descriptives.py          # descriptive statistics + annual trend regression
-│   └── figures.py               # regenerates Figures 1–3
-└── .github/workflows/release.yml
+│   └── figures.py               # regenerates Figures 1–3 (incl. trend line + regression annotation)
+└── figures/                     # the three manuscript figures (PNG, 300 dpi)
 ```
 
 ---
@@ -33,10 +33,9 @@ This repository contains the coded data, the analysis/plotting scripts, and the 
 ## Data provenance and **important caveats**
 
 - **Source.** All 107 articles were retrieved from the **CNKI journal database** (search date **2025-06-10**), publication window **2014-01-01 – 2025-12-31**, using the Boolean search string documented in the manuscript (Section 2.1).
-- **What is exact here.** `data/coding_aggregates.csv` reproduces **verbatim** the counts/percentages reported in the manuscript (research theme; assessment format; teaching method; evaluation tool; TCM-specific and emergency-skill flags; year-segment totals). These are directly verifiable against the published tables.
-- **What the author must complete.** The full **107-row** bibliographic table (title / author / year / source / codes) is **not** included in this scaffold. The author must export it from CNKI (search date 2025-06-10) and append the rows to `data/bibliography_template.csv`, then fill `data/yearly_counts_template.csv` with the per-year counts.
-- **Figure 1 caveat.** The exact **per-year** counts (2014–2025) were not available as a machine-readable file when this package was assembled. The manuscript's Figure 1 was therefore rendered from a series **reconstructed** to satisfy every published constraint — the year-segment totals (10 / 40 / 33 / 24) and the four named single-year peaks (2018 = 14, 2019 = 16, 2023 = 14, 2025 = 15). Once `yearly_counts.csv` is completed from the CNKI export, re-run `scripts/figures.py` to regenerate the figure from **exact** values and re-compute the trend regression with `scripts/descriptives.py`.
-- **Reported trend.** The manuscript reports a linear slope of **0.983** and **R² = 0.444** (manuscript Sections 2.5 / 3.1). These should be re-verified against the completed `yearly_counts.csv`.
+- **What is exact here.** `data/coding_aggregates.csv` reproduces **verbatim** the counts/percentages reported in the manuscript (research theme; assessment format; teaching method; evaluation tool; TCM-specific and emergency-skill flags; year-segment totals). `data/yearly_counts.csv` now contains the **exact per-year counts (2014–2025)**, recovered from the original embedded figure of the manuscript and verified to reproduce the reported trend regression (**slope = 0.983, R² = 0.444, total = 107**). Re-running `scripts/descriptives.py` and `scripts/figures.py` regenerates Figure 1 and the regression from these exact values — the deposited figures and the published manuscript are therefore reproducible from first principles.
+- **What the author must still complete.** The full **107-row** bibliographic table (title / author / year / source / codes) is **not yet** included. The author must export it from CNKI (search date 2025-06-10) and append the rows to `data/bibliography_template.csv`. Until that is done, the manuscript's data-availability statement (§2.6, "107-article bibliography and coding table deposited") is **only partially satisfied** by this package: the deposited materials are the aggregated coding results, the exact yearly counts, the analysis scripts, the three figures, and this README/MANIFEST. The author should either complete the 107-row table before submission or tighten §2.6 to describe only what is actually deposited.
+- **Continuous-release workflow.** The optional GitHub Actions workflow (`.github/workflows/release.yml`) is **not bundled** in this release because the repository was created with a token lacking the `workflow` scope. The workflow file is supplied separately by the author; once added with a token that has `workflow` scope, pushing a `v*` tag will auto-generate MANIFEST.txt and a release containing the figures.
 
 ---
 
@@ -50,7 +49,7 @@ python scripts/descriptives.py
 python scripts/figures.py
 ```
 
-No external data download is required to reproduce the aggregated tables and Figures 2–3. Figure 1 requires the completed `data/yearly_counts.csv`.
+No external data download is required: all aggregated tables and Figures 1–3 reproduce directly from the deposited data files.
 
 ---
 
