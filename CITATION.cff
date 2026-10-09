@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this data or code, please cite the manuscript and this repository."
+type: software
+title: "TCM Residency Clinical-Skill Assessment — Content Analysis (107 articles, 2014–2025): reproducibility package"
+authors:
+  - family-names: Yang
+    given-names: Yongxin
+    orcid: "https://orcid.org/0009-0004-9698-6552"
+    affiliation: "The Second Affiliated Hospital of Fujian University of Traditional Chinese Medicine, Fuzhou, Fujian 350003, China"
+version: 1.0.0
+date-released: 2026-10-09
+license: MIT
+repository-code: "https://github.com/yyx-4113/tcm-residency-clinical-skill-assessment-review"
+keywords:
+  - Traditional Chinese Medicine
+  - residency training
+  - clinical skill assessment
+  - content analysis
+  - medical education

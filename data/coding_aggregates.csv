@@ -1,0 +1,25 @@
+﻿dimension,category,n,pct,denominator,note
+year_segment,2014-2016,10,9.3,107,
+year_segment,2017-2020,40,37.4,107,first peak
+year_segment,2021-2023,33,30.8,107,
+year_segment,2024-2025,24,22.4,107,
+research_theme,教学实践 Teaching practice,62,57.9,107,
+research_theme,模拟/实训 Simulation,20,18.7,107,
+research_theme,考核体系/标准 Assessment system/standards,19,17.8,107,
+research_theme,综述/调查 Review/Survey,6,5.6,107,
+assessment_format,综合技能考核/OSCE,20,66.7,30,denominator = 30 explicitly reporting
+assessment_format,出科考核,5,16.7,30,
+assessment_format,过程考核/年度考核,3,10.0,30,
+assessment_format,Mini-CEX 床旁考核,2,6.7,30,
+teaching_method,情景模拟 Scenario simulation,16,42.1,38,multi-label; denominator = 38
+teaching_method,PBL,10,26.3,38,
+teaching_method,CBL,9,23.7,38,
+teaching_method,虚拟仿真/VR/AR,8,21.1,38,
+teaching_method,翻转课堂 Flipped classroom,4,10.5,38,
+teaching_method,Debriefing,1,2.6,38,
+evaluation_tool,Mini-CEX,10,66.7,15,denominator = 15 explicitly reporting
+evaluation_tool,OSCE 评分表,3,20.0,15,
+evaluation_tool,DOPS,1,6.7,15,
+evaluation_tool,满意度调查/其他 Satisfaction survey/other,1,6.7,15,reconciles the 14->15 gap implied by the manuscript text
+flag,中医特色技能 TCM-specific skill,8,7.5,107,
+flag,急救/气道技能 Emergency/airway skill,5,4.7,107,
